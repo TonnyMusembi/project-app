@@ -38,7 +38,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // display students
         $storeData = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|max:255',
@@ -46,7 +46,7 @@ class StudentController extends Controller
             'password' => 'required|max:255',
         ]);
         $student = Student::create($storeData);
-        //return response()->json(['data' => 'data']);
+        //.return response()->json(['data' => 'data']);
          return redirect('/students')->with('completed', 'Student has been saved!');
     }
 
@@ -83,8 +83,6 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-
         $updateData = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|max:255',
@@ -103,9 +101,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
         $student = Student::findOrFail($id);
         $student->delete();
         return redirect('/students')->with('completed', 'Student has been deleted');
     }
+
 }

@@ -27,5 +27,11 @@ class ArticleController extends Controller
         //return Article::find($id);
 
     }
+    public function create(){
 
+    }
+    public function edit($id){
+        //
+    }
+    
 }
