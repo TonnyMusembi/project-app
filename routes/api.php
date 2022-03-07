@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 Use App\Article;
+use App\Http\Controllers\StudentController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +18,17 @@ Use App\Article;
 |
 */
 
+
 Route::middleware('auth:sanctum')->group(function () {
-    
+
 });
+
 
 Route::get('articles', function() {
     // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
     //return Article::all();
 });
+Route::resource('students', StudentController::class);
+
 
