@@ -20,5 +20,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('students', StudentController::class);
-//Route::resource('contacts', 'App\Http\Controllers\ContactController');
-Route::resource('contacts', ContactController::class);
+Route::resource('contacts', 'App\Http\Controllers\ContactController');
+//Route::resource('contacts', ContactController::class);

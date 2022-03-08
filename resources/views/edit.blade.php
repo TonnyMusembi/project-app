@@ -41,6 +41,8 @@
               <label for="password">Password</label>
               <input type="text" class="form-control" name="password" value="{{ $student->password }}"/>
           </div>
+          <input type="hidden"  name="frontend" value="lite"/>
+
           <button type="submit" class="btn btn-block btn-danger">Update User</button>
       </form>
   </div>

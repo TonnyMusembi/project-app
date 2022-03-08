@@ -17,6 +17,7 @@ class StudentController extends Controller
     {
         $student = Student::all();
         return view('index', compact('student'));
+
     }
 
     /**
@@ -48,6 +49,8 @@ class StudentController extends Controller
         $student = Student::create($storeData);
         //.return response()->json(['data' => 'data']);
          return redirect('/students')->with('completed', 'Student has been saved!');
+         return response()->json(['status' => 201,   'message' => 'Student Created Successfully.']);
+
     }
 
     /**
@@ -60,7 +63,6 @@ class StudentController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -83,6 +85,7 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $frontend = $request->frontend;
         $updateData = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|max:255',
@@ -91,6 +94,7 @@ class StudentController extends Controller
         ]);
         Student::whereId($id)->update($updateData);
         return redirect('/students')->with('completed', 'Student has been updated');
+
     }
 
     /**
@@ -101,9 +105,13 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
+        // $student = Student::findOrFail($id);
+        // $student->delete();
+        // return redirect('/students')->with('completed', 'Student has been deleted');
         $student = Student::findOrFail($id);
         $student->delete();
-        return redirect('/students')->with('completed', 'Student has been deleted');
+        return redirect('/students')->with('completed','Student has been deleted');
+        
     }
 
 }
