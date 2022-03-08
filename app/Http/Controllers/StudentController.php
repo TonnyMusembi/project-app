@@ -17,6 +17,7 @@ class StudentController extends Controller
     {
         $student = Student::all();
         return view('index', compact('student'));
+        return response () ->json('')(['$data']);
 
     }
 
@@ -71,9 +72,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
         $student = Student::findOrFail($id);
         return view('edit', compact('student'));
+        //return response() ->json([ 'status' =>201,]);
     }
 
     /**
@@ -94,6 +95,7 @@ class StudentController extends Controller
         ]);
         Student::whereId($id)->update($updateData);
         return redirect('/students')->with('completed', 'Student has been updated');
+        return response () ->json('')(['$data']);
 
     }
 
@@ -111,7 +113,8 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
         $student->delete();
         return redirect('/students')->with('completed','Student has been deleted');
-        
+        return response () ->json (['status' => 201,]);
+
     }
 
 }
