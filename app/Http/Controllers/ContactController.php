@@ -19,7 +19,6 @@ class ContactController extends Controller
         $contacts = Contact::all();
 
         return view('contacts.index', compact('contacts'));
-        
       }
 
     /**

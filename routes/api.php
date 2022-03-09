@@ -8,6 +8,8 @@ use App\Http\Controllers\ContactController;
 
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -32,4 +34,8 @@ Route::get('articles', function () {
 });
 Route::resource('students', StudentController::class);
 Route::resource('contacts', ContactController::class);
-Route::resource('contacts', 'App\Http\Controllers\ContactController');
+//Route::resource('contacts', 'App\Http\Controllers\ContactController');
+ //Route::post('register', [PassportAuthController::class, 'register']);
+ //Route::post('login', [PassportAuthController::class, 'login']);
+
+

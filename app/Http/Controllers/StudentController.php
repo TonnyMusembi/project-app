@@ -13,12 +13,11 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $student = Student::all();
         return view('index', compact('student'));
         return response () ->json('')(['$data']);
-
     }
 
     /**
@@ -26,10 +25,14 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        $createStudent = $request->validate();
         return view('create');
+        return response()->json([
+            '$data'
+        ]);
     }
 
     /**
@@ -62,7 +65,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+   return('');
+
     }
     /**
      * Show the form for editing the specified resource.
