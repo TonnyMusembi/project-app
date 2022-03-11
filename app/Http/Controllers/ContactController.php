@@ -19,6 +19,9 @@ class ContactController extends Controller
         $contacts = Contact::all();
 
         return view('contacts.index', compact('contacts'));
+
+
+        return response() ->json (['message ']);
       }
 
     /**
@@ -57,6 +60,7 @@ class ContactController extends Controller
         ]);
         $contact->save();
         return redirect('/contacts')->with('success', 'Contact saved!');
+        // return response() ->json  (['']);
     }
 
     /**

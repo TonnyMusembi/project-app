@@ -6,7 +6,7 @@ use App\Article;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
 
-
+use App\Http\Controllers\PhotoController;
 
 
 
@@ -24,7 +24,9 @@ use App\Http\Controllers\ContactController;
 
 Route::middleware('auth:sanctum')->group(function () {
 
+
 });
+
 
 
 Route::get('articles', function () {
@@ -37,5 +39,8 @@ Route::resource('contacts', ContactController::class);
 //Route::resource('contacts', 'App\Http\Controllers\ContactController');
  //Route::post('register', [PassportAuthController::class, 'register']);
  //Route::post('login', [PassportAuthController::class, 'login']);
+
+ Route::resource('photos', PhotoController::class);
+
 
 

@@ -8,13 +8,12 @@ use Nette\Schema\Schema;
 class ArticleController extends Controller
 {
     public function index(){
-        //return Article::all();
-        //return $request->user();
-
+     //return Article::all();
+return response() ->json (['$data']);
     }
     public function store(Request $request)
     {
-       // return Article::create($request->all());
+       //return Article::create($request->all());
 
     }
 
@@ -33,5 +32,5 @@ class ArticleController extends Controller
     public function edit($id){
         //
     }
-    
+
 }
