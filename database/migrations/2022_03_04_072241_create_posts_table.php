@@ -14,7 +14,10 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('emial');
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -28,4 +31,5 @@ class CreatePostsTable extends Migration
     {
         Schema::dropIfExists('posts');
     }
+    
 }

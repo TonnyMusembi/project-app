@@ -51,7 +51,6 @@ class StudentController extends Controller
         return redirect('/students')->with('completed', 'Student has been saved!');
         //return response()->json(['status' => 201,   'message' => 'Student Created Successfully.']);
 
-
     }
 
     /**
@@ -111,6 +110,6 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
         $student->delete();
         return redirect('/students')->with('completed', 'Student has been deleted');
-        return response()->json(['status' => 201,]);
+       // return response()->json(['status' => 201,]);
     }
 }

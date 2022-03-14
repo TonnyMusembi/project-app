@@ -38,9 +38,8 @@ Route::resource('students', StudentController::class);
 Route::resource('contacts', ContactController::class);
 //Route::resource('contacts', 'App\Http\Controllers\ContactController');
  //Route::post('register', [PassportAuthController::class, 'register']);
- //Route::post('login', [PassportAuthController::class, 'login']);
+ //πRoute::post('login', [PassportAuthController::class, 'login']);
 
  Route::resource('photos', PhotoController::class);
 
-
-
+ Route::resource('photo', App\Http\Controllers\API\PhotoController::class);
