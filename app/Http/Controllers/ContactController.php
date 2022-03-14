@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
-use App\Models\Student;
+//use App\Models\Student;
 
 
 class ContactController extends Controller
@@ -125,6 +125,7 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         $contact->delete();
 
-        return redirect('/contacts')->with('success', 'Contact deleted!');
+        //return redirect('/contacts')->with('success', 'Contact deleted!');
+        return response()->json ([ ]);
     }
 }
