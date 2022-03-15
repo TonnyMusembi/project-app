@@ -28,6 +28,8 @@ class CountryController extends Controller
     public function create()
     {
         //
+        return view('create');
+        return response() ->json ([ '']);
     }
 
     /**

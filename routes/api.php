@@ -25,6 +25,7 @@ use App\Http\Controllers\PhotoController;
 Route::middleware('auth:sanctum')->group(function () {
 
 
+    //Route::resource('students', StudentController::class);
 });
 
 
