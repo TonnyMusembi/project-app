@@ -29,7 +29,7 @@ class CountryController extends Controller
     {
         //
         return view('create');
-        return response() ->json ([ '']);
+        //return response() ->json ([ '']);
     }
 
     /**

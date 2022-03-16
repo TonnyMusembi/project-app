@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-
+use Illuminate\Contracts\Pagination\Paginator;
 
 class StudentController extends Controller
 {
@@ -17,7 +17,9 @@ class StudentController extends Controller
     {
         $student = Student::all();
         return view('index', compact('student'));
-        return response () ->json('')(['$data']);
+        //return response()->json(['$data' => 'data']);
+
+
     }
 
     /**
@@ -28,7 +30,7 @@ class StudentController extends Controller
     public function create(Request $request)
     {
         //
-        //$createStudent = $request->validate();
+        $createStudent = $request->validate();
         return view('create');
     }
 
@@ -48,8 +50,8 @@ class StudentController extends Controller
             'password' => 'required|max:255',
         ]);
         $student = Student::create($storeData);
-         return redirect('/students')->with('completed', 'Student has been saved!');
-         return response()->json(['status' => 201,   'message' => 'Student Created Successfully.']);
+        return redirect('/students')->with('completed', 'Student has been saved!');
+        //return response()->json(['status' => 201,   'message' => 'Student Created Successfully.']);
 
     }
 
@@ -61,7 +63,6 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-
     }
     /**
      * Show the form for editing the specified resource.
@@ -72,8 +73,8 @@ class StudentController extends Controller
     public function edit($id)
     {
         $student = Student::findOrFail($id);
-        return view('edit', compact('student'));
-        //return response() ->json([ 'status' =>201,]);
+        //return view('edit', compact('student'));
+        return response() ->json([ 'status' =>201,]);
     }
 
     /**
@@ -94,8 +95,8 @@ class StudentController extends Controller
         ]);
         Student::whereId($id)->update($updateData);
         return redirect('/students')->with('completed', 'Student has been updated');
-        return response () ->json('')(['$data']);
-
+        //return response()->json()(['status' => 201]);
+        //Cannot have two returns on the same,it picks the first one
     }
 
     /**
@@ -106,14 +107,11 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        // $student = Student::findOrFail($id);
-        // $student->delete();
-        // return redirect('/students')->with('completed', 'Student has been deleted');
+
         $student = Student::findOrFail($id);
         $student->delete();
-        return redirect('/students')->with('completed','Student has been deleted');
-        return response () ->json (['status' => 201,]);
-
+        return redirect('/students')->with('completed', 'Student has been deleted');
+        return response()->json(['status' => 201,]);
     }
 
 }
