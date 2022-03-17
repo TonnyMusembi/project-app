@@ -15,13 +15,12 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        $student = Student::all();
+       $student = Student::all();
         return view('index', compact('student'));
         //return response()->json(['$data' => 'data']);
 
-
+        $student = Student::paginate(4);
     }
-
     /**
      * Show the form for creating a new resource.
      *

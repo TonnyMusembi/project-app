@@ -9,9 +9,9 @@ use App\Http\Controllers\GamesController;
 
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ArsenalController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\BookController;
 
-
-//use App\Http\Controllers\Auth\RegisterController;
 
 
 
@@ -40,11 +40,20 @@ Route::get('articles', function () {
     // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
     //return Article::all();
+    return response()->json ([]);
 });
+
+Route::resource('api/books', BookController::class);
+
 Route::resource('api/students', StudentController::class);
 Route::resource('api/games', GamesController::class);
 Route::resource('contacts', ContactController::class);
 Route::resource('api/arsenal', ArsenalController::class);
+Route::resource('api/users', UsersController::class);
+
+
+
+
 
 
 //Route::post('api/register', 'Auth\RegisterController@register');
@@ -53,7 +62,7 @@ Route::resource('api/arsenal', ArsenalController::class);
  //Route::post('register', [PassportAuthController::class, 'register']);
  //πRoute::post('login', [PassportAuthController::class, 'login']);
 
- Route::resource('photos', PhotoController::class);
+ Route::resource('api/photo', PhotoController::class);
 
  //Route::resource('photo', App\Http\Controllers\API\PhotoController::class);
 

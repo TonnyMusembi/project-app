@@ -19,6 +19,7 @@ class CreatePhotosTable extends Migration
             $table->text('desc');
             $table->timestamps();
         });
+
     }
 
     /**
