@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 });
 Route::resource('students', StudentController::class);
-//Route::resource('contacts', 'App\Http\Controllers\ContactController');
+Route::resource('contacts', 'App\Http\Controllers\ContactController');
 Route::resource('contacts', ContactController::class);
 

@@ -69,7 +69,7 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Photo $photo)
+    public function update(Request $request, Photo $photo )
     {
         $validator = Validator::make($request->all(),[
             'name' => 'required|string|max:255',
@@ -93,8 +93,10 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Photo $photo)
+    public function destroy(Photo $photo ,$id)
     {
+
+        $photo =Photo::find($id);
         $photo->delete();
 
         //return response()->json('Photo deleted successfully');

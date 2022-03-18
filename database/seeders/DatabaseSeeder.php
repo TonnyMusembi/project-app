@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Comment;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,5 +20,9 @@ class DatabaseSeeder extends Seeder
 
         //$this->call(RestaurantSeeder::class);
 
+        Comment::factory()
+        ->times(3)
+        ->create();
+ 
     }
 }

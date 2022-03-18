@@ -9,7 +9,7 @@ class ArticleController extends Controller
 {
     public function index(){
      //return Article::all();
-return response() ->json (['$data']);
+  return response() ->json (['$data']);
     }
     public function store(Request $request)
     {
