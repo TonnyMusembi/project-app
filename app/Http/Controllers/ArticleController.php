@@ -1,19 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Article;
+//use App\Article;
 use Illuminate\Http\Request;
 use Nette\Schema\Schema;
+use App\Models\Article;
+
 
 class ArticleController extends Controller
 {
     public function index(){
-     //return Article::all();
-  return response() ->json (['$data']);
+    return Article::all();
+
+ // return response() ->json (['$data']);
     }
     public function store(Request $request)
     {
-       //return Article::create($request->all());
+       return Article::create($request->all());
 
     }
 
@@ -32,5 +35,6 @@ class ArticleController extends Controller
     public function edit($id){
         //
     }
+
 
 }

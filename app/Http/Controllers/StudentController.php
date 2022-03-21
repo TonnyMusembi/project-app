@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-use Illuminate\Contracts\Pagination\Paginator;
+//use Illuminate\Contracts\Pagination\Paginator;
 
 class StudentController extends Controller
 {

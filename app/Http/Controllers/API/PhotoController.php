@@ -4,7 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Validator;
+//use Validator;
+use Illuminate\Support\Facades\Validator;
+
 use App\Models\Photo;
 use App\Http\Resources\PhotoResource;
 
@@ -100,7 +102,7 @@ class PhotoController extends Controller
         $photo->delete();
 
         //return response()->json('Photo deleted successfully');
-        return response() ->json ('Photo deketed');
+        return response() ->json ('Photo deleted');
 
     }
 }

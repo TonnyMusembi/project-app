@@ -13,6 +13,8 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\PremierController;
 
+use App\Http\Controllers\ArticleController;
+
 use App\Http\Controllers\API\CommentController;
 
 
@@ -31,17 +33,16 @@ use App\Http\Controllers\API\CommentController;
 Route::middleware('auth:sanctum')->group(function () {
     //Route::resource('games', GamesController::class);
 
-    //Route::resource('students', StudentController::class);
 });
 
 
 
-Route::get('articles', function () {
-    // If the Content-Type and Accept headers are set to 'application/json',
-    // this will return a JSON structure. This will be cleaned up later.
-    //return Article::all();
-
-});
+// Route::get('articles', function () {
+//     // If the Content-Type and Accept headers are set to 'application/json',
+//     // this will return a JSON structure. This will be cleaned up later.
+//     return Article::all();
+// });
+Route::resource('api/articles', ArticleController::class);
 
 Route::apiResource('api/comments', CommentController::class);
 

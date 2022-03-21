@@ -128,4 +128,7 @@ class ContactController extends Controller
         //return redirect('/contacts')->with('success', 'Contact deleted!');
         return response()->json ([ ]);
     }
+    public function toArray(){
+        return response()->json();
+    }
 }
