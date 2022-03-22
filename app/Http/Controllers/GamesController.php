@@ -14,7 +14,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-
+echo "All Games";
         // return response()->json (['status' =>200,'message'=>'show games']);
     }
 
@@ -51,6 +51,7 @@ class GamesController extends Controller
     public function show($id)
     {
         //
+        echo "single game ";
     }
 
     /**

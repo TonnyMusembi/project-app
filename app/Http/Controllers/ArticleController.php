@@ -16,7 +16,9 @@ class ArticleController extends Controller
     }
     public function store(Request $request)
     {
-       return Article::create($request->all());
+        $article = Article::create($request->all());
+
+        return response()->json($article, 201);
 
     }
 
@@ -24,9 +26,10 @@ class ArticleController extends Controller
 
 
   }
-  public function show($id)
+  public function show( Article $article )
     {
-        //return Article::find($id);
+        return $article;
+
 
     }
     public function create(){
@@ -35,6 +38,15 @@ class ArticleController extends Controller
     public function edit($id){
         //
     }
+public function update( Article $article , Request $request){
 
+    $article->update($request->all());
 
+        return response()->json($article, 200);
+}
+public function delete (Article $article){
+    $article -> delete();
+    return response()->json (null ,204);
+
+}
 }

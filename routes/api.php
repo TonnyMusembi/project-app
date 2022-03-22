@@ -15,7 +15,14 @@ use App\Http\Controllers\PremierController;
 
 use App\Http\Controllers\ArticleController;
 
+use App\Http\Controllers\PostController;
+
 use App\Http\Controllers\API\CommentController;
+use Stripe\ApiResource;
+
+//use Database\Seeders\ArticlesTableSeeder;
+
+
 
 
 /*
@@ -29,7 +36,6 @@ use App\Http\Controllers\API\CommentController;
 |
 */
 
-
 Route::middleware('auth:sanctum')->group(function () {
     //Route::resource('games', GamesController::class);
 
@@ -37,17 +43,17 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
 
-// Route::get('articles', function () {
-//     // If the Content-Type and Accept headers are set to 'application/json',
-//     // this will return a JSON structure. This will be cleaned up later.
-//     return Article::all();
-// });
+Route::get('articles', function () {
+    // If the Content-Type and Accept headers are set to 'application/json',
+    // this will return a JSON structure. This will be cleaned up later.
+   //return Articles::all();
+});
 Route::resource('api/articles', ArticleController::class);
 
 Route::apiResource('api/comments', CommentController::class);
 
-
 Route::resource('api/books', BookController::class);
+
 
 Route::resource('api/students', StudentController::class);
 Route::resource('api/games', GamesController::class);
@@ -56,6 +62,8 @@ Route::resource('api/arsenal', ArsenalController::class);
 Route::resource('api/users', UsersController::class);
 
 Route::resource('api/premier', PremierController::class);
+
+Route::resource('api/posts', PostController::class);
 
 
 

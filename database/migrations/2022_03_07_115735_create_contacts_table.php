@@ -35,6 +35,7 @@ class CreateContactsTable extends Migration
       Schema::dropIfExists('contacts');
 
     }
+
 }
 
 
