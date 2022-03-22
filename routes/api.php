@@ -79,4 +79,3 @@ Route::resource('api/posts', PostController::class);
  Route::resource('api/photo', PhotoController::class);
 
  Route::resource('photo', App\Http\Controllers\API\PhotoController::class);
-
