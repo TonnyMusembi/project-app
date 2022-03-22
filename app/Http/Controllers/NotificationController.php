@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 
 class NotificationController extends Controller
@@ -14,6 +15,7 @@ class NotificationController extends Controller
   }
     public function SendSmsNotification()
     {
+
 
         $basic  = new \Vonage\Client\Credentials\Basic("2cfbae65", "JRHb3PwFhcpGH9SM");
         $client = new \Vonage\Client($basic);
@@ -30,5 +32,8 @@ class NotificationController extends Controller
             echo "The message failed with status: " . $message->getStatus() . "\n";
         }
 
+    }
+    public  function create(){
+        return response()->json([]);
     }
 }
