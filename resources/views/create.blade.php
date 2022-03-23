@@ -41,6 +41,7 @@
               <input type="text" class="form-control" name="password"/>
           </div>
           <button type="submit" class="btn btn-block btn-danger">Create User</button>
+          ,
       </form>
   </div>
 </div>

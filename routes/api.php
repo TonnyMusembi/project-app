@@ -16,8 +16,11 @@ use App\Http\Controllers\PremierController;
 use App\Http\Controllers\ArticleController;
 
 use App\Http\Controllers\PostController;
-
 use App\Http\Controllers\API\CommentController;
+
+use App\Http\Controllers\MpesaController;
+
+
 use Stripe\ApiResource;
 
 //use Database\Seeders\ArticlesTableSeeder;
@@ -35,6 +38,8 @@ use Stripe\ApiResource;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+
 
 Route::middleware('auth:sanctum')->group(function () {
     //Route::resource('games', GamesController::class);
@@ -79,3 +84,7 @@ Route::resource('api/posts', PostController::class);
  Route::resource('api/photo', PhotoController::class);
 
  Route::resource('photo', App\Http\Controllers\API\PhotoController::class);
+
+//mpesa token
+Route::post('v1/access/token', 'MpesaController@generateAccessToken');
+//Route::post('v1/hlab/stk/push', 'MpesaController@customerMpesaSTKPush');

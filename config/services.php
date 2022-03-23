@@ -30,4 +30,23 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+
+    'nexmo' => [
+        'sms_from' => 'Vonage SMS API HERE',
+    ],
+
+    // 'mpesa' => [
+    //     // live or sandbox
+    //     'environment'            => env('MPESA_ENV'),
+
+    //     // Our mpesa API credentials
+    //     'consumer_key'           => env('MPESA_CONSUMER_KEY'),
+    //     'consumer_secret'        => env('MPESA_CONSUMER_SECRET'),
+
+    //     // till number
+    //     'shortcode'              => env('MPESA_SHORT_CODE'),
+
+    //     // till number pass key
+    //     'passkey'                => env('MPESA_PASS_KEY'),
+    //  ]
 ];

@@ -14,7 +14,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-echo "All Games";
+ echo "All Games";
         // return response()->json (['status' =>200,'message'=>'show games']);
     }
 

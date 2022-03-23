@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Book;
 class BookController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
        $books = Book::all();
-        return response()->json('data');
+        return response()->json('$data');
     }
 
     public function store(Request $request)

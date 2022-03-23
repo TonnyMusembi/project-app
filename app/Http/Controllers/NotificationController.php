@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Http;
 class NotificationController extends Controller
 {
   //
-
   public function index(){
       return response()->json();
   }
@@ -23,7 +22,6 @@ class NotificationController extends Controller
         $response = $client->sms()->send(
             new \Vonage\SMS\Message\SMS("254706047229","Tonny", 'Tonny Systems')
         );
-
         $message = $response->current();
 
         if ($message->getStatus() == 0) {

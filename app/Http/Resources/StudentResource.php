@@ -22,8 +22,6 @@ class StudentResource extends JsonResource
          'phone'=>$this->phone,
          'email'=>$this->email,
          'password'=>$this->password,
-
-
         ];
     }
 }

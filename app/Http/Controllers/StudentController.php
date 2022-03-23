@@ -19,8 +19,11 @@ class StudentController extends Controller
         return view('index', compact('student'));
         //return response()->json(['$data' => 'data']);
 
-        $student = Student::paginate(4);
     }
+
+    // public function index(){
+    //     return response()->json(['']);
+    // }
     /**
      * Show the form for creating a new resource.
      *
@@ -72,7 +75,7 @@ class StudentController extends Controller
     public function edit($id)
     {
         $student = Student::findOrFail($id);
-        //return view('edit', compact('student'));
+        return view('edit', compact('student'));
         return response() ->json([ 'status' =>201,]);
     }
 
@@ -106,11 +109,11 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-
         $student = Student::findOrFail($id);
         $student->delete();
         return redirect('/students')->with('completed', 'Student has been deleted');
         return response()->json(['status' => 201,]);
     }
+
 
 }
