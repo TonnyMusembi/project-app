@@ -86,5 +86,6 @@ Route::resource('api/posts', PostController::class);
  Route::resource('photo', App\Http\Controllers\API\PhotoController::class);
 
 //mpesa token
-Route::post('v1/access/token', 'MpesaController@generateAccessToken');
+//Route::post('v1/access/token', 'MpesaController@generateAccessToken');
 //Route::post('v1/hlab/stk/push', 'MpesaController@customerMpesaSTKPush');
+
