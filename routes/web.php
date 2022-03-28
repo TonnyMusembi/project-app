@@ -5,9 +5,10 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\NotificationController;
-
+use App\Http\Controllers\payements\mpesa\MpesaController;
 
 /*
+
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -33,3 +34,7 @@ Route::resource('contacts', ContactController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/send', '\App\Http\Controllers\HomeController@send')->name('home.send');
+
+
+//Route::post('/get-token',[\App\Http\Controllers\payements\mpesa\MpesaController::class,'getAccessToken']);
+Route::post('/get-token',[MpesaController::class,'getAcessToken']);

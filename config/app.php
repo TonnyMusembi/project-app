@@ -234,5 +234,17 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+    'debug_blacklist'=>[
+        'ENV'=>[
+            'MPESA_CONSUMER_KEY',
+            'MPESA_CONSUMER_SECRET',
+            'MPESA_SHORT_CODE',
+           ' MPESA_PASS_KEY',
+           'MPESA_ENV',
+            'MPESA_TEST_URL',
+            'MPESA_TEST_MSISDN',
+            'MPESA_B2C_PASSWORD',
+        ]
+    ]
 
 ];

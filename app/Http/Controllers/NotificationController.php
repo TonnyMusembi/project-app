@@ -15,7 +15,6 @@ class NotificationController extends Controller
     public function SendSmsNotification()
     {
 
-
         $basic  = new \Vonage\Client\Credentials\Basic("2cfbae65", "JRHb3PwFhcpGH9SM");
         $client = new \Vonage\Client($basic);
 
