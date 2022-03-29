@@ -17,8 +17,10 @@ use App\Http\Controllers\ArticleController;
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\API\CommentController;
+use App\Http\Controllers\payements\mpesa\MpesaController;
 
-use App\Http\Controllers\MpesaController;
+
+// use App\Http\Controllers\MpesaController;
 
 
 use Stripe\ApiResource;
@@ -51,7 +53,7 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::get('articles', function () {
     // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
-   //return Articles::all();
+    //return Articles::all();
 });
 Route::resource('api/articles', ArticleController::class);
 
@@ -78,14 +80,16 @@ Route::resource('api/posts', PostController::class);
 //Route::post('api/register', 'Auth\RegisterController@register');
 
 //Route::resource('contacts', 'App\Http\Controllers\ContactController');
- //Route::post('register', [PassportAuthController::class, 'register']);
- //πRoute::post('login', [PassportAuthController::class, 'login']);
+//Route::post('register', [PassportAuthController::class, 'register']);
+//πRoute::post('login', [PassportAuthController::class, 'login']);
 
- Route::resource('api/photo', PhotoController::class);
+Route::resource('api/photo', PhotoController::class);
 
- Route::resource('photo', App\Http\Controllers\API\PhotoController::class);
+Route::resource('photo', App\Http\Controllers\API\PhotoController::class);
+
+Route::post('api/get-tokens', [MpesaController::class, 'getAcessToken']);
+
 
 //mpesa token
 //Route::post('v1/access/token', 'MpesaController@generateAccessToken');
 //Route::post('v1/hlab/stk/push', 'MpesaController@customerMpesaSTKPush');
-

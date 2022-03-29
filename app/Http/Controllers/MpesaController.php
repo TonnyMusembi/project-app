@@ -11,7 +11,6 @@ class MpesaController extends Controller
 
 
     // stk_push
-
     public function customerMpesaSTKPush()
     {
         $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
