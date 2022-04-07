@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "safaricom/mpesa": "^1.0",
+        "twilio/sdk": "^6.36",
         "vonage/client": "^3.0"
     },
     "require-dev": {
