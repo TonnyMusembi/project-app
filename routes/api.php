@@ -19,6 +19,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\payements\mpesa\MpesaController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProductController;
 // use App\Http\Controllers\MpesaController;
 
 
@@ -88,6 +89,7 @@ Route::resource('photo', App\Http\Controllers\API\PhotoController::class);
 
 Route::post('api/get-tokens', [MpesaController::class, 'getAcessToken']);
 Route::resource('api/payments',PaymentController::class);
+Route::resource('api/products',ProductController::class);
 
 //mpesa token
 //Route::post('v1/access/token', 'MpesaController@generateAccessToken');

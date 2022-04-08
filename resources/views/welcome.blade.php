@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <title>Mpesa Tokens </title>
+    <title>Mpesa Tokens</title>
 </head>
 
-<body>
-
+<body bgcolor="s">
     <div class="container">
         <div class="row mt-5">
             <div class="col-sm-8 mx-auto">
@@ -45,11 +44,9 @@
                         <div class="form-group">
                             <label for="account">Account</label>
                             <input type="text" name="account" class="form-control" id="account">
-
                         </div>
                         </form>
                         {{-- form --}}
-
                         <br>
                         <button class="btn btn-primary">Stimulate Payment</button>
                     </div>
@@ -61,7 +58,7 @@
         <div class="row mt-5">
             <div class="col-sm-8 mx-auto">
                 <div class="card">
-                    <div class="card-header">Items</div>
+                    <div class="card-header">Transaction</div>
                     <div class="card-body">
                         <form action="">
                             <div class="form-group">
@@ -70,6 +67,8 @@
 
                             </div>
                         </form>
+                        <br>
+                        <button id="" class="btn btn-primary">Transaction</button>
                     </div>
                 </div>
             </div>
@@ -86,8 +85,17 @@
                 .catch((error) => {
                     console.log(error)
                 })
-
         })
+
+        const url = "http://project.test/api/payments"
+        fetch(url)
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((error) => {
+                console.log(error)
+
+            })
     </script>
 </body>
 

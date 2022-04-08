@@ -3,6 +3,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UsersPhoneNumber;
+//use Illuminate\Support\Facades\Validator;
+
+
 
 use Illuminate\Http\Request;
 
@@ -27,4 +31,6 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+
 }

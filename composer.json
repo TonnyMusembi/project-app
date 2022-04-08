@@ -11,6 +11,7 @@
         "djunehor/laravel-sms": "^2.2",
         "doctrine/dbal": "^3.3",
         "fruitcake/laravel-cors": "^2.0",
+        "gr8shivam/laravel-sms-api": "^3.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/cashier": "^13.8",
         "laravel/fortify": "^1.11",

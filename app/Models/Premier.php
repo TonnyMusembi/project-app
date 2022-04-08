@@ -9,8 +9,8 @@ class Premier extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'name',
-        'email'
 
+        'premier_id',
+        'name'
     ];
 }

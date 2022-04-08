@@ -28,10 +28,8 @@ class NotificationController extends Controller
         } else {
             echo "The message failed with status: " . $message->getStatus() . "\n";
         }
-
     }
     public  function create(){
         return response()->json([]);
     }
-    
 }
