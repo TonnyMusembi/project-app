@@ -7,11 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <title>Mpesa Tokens</title>
+    <title>Tokens</title>
 </head>
 
-<body bgcolor="s">
+<body bgcolor="red">
     <div class="container">
         <div class="row mt-5">
             <div class="col-sm-8 mx-auto">
@@ -98,5 +97,4 @@
         console.log(array);
     </script>
 </body>
-
 </html>

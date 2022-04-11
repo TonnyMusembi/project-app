@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 //use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Support\Facades\Validator;
+
 
 class StudentController extends Controller
 {
@@ -15,15 +17,13 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-       $student = Student::all();
-        return view('index', compact('student'));
+        return Student::all();
+        //$student = Student::all();
+        //return view('index', compact('student'));
         //return response()->json(['$data' => 'data']);
 
     }
 
-    // public function index(){
-    //     return response()->json(['']);
-    // }
     /**
      * Show the form for creating a new resource.
      *
@@ -45,17 +45,37 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         // display students
-        $storeData = $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|max:255',
-            'phone' => 'required|numeric',
-            'password' => 'required|max:255',
-        ]);
-        $student = Student::create($storeData);
-        return redirect('/students')->with('completed', 'Student has been saved!');
-  
-    }
+        // $storeData = $request->validate([
+        //     'name' => 'required|max:255',
+        //     'email' => 'required|max:255',
+        //     'phone' => 'required|numeric',
+        //     'password' => 'required|max:255',
+        // ]);
+        // $student = Student::create($storeData);
+        // return redirect('/students')->with('completed', 'Student has been saved!');
 
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'password' => 'required',
+
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status' => 422, 'errors' => $validator->errors()]);
+        } else {
+
+            Student::create([
+                'id' => $request->input('id'),
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'phone' => $request->input('phone'),
+                'password' => $request->input('password')
+            ]);
+        }
+        return response()->json(['req' => $request]);
+    }
     /**
      * Display the specified resource.
      *
@@ -64,6 +84,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
+        return response()->json(['$data']);
     }
     /**
      * Show the form for editing the specified resource.
@@ -75,7 +96,7 @@ class StudentController extends Controller
     {
         $student = Student::findOrFail($id);
         return view('edit', compact('student'));
-        return response() ->json([ 'status' =>201,]);
+        //return response() ->json([ 'status' =>201,]);
     }
 
     /**
@@ -110,9 +131,7 @@ class StudentController extends Controller
     {
         $student = Student::findOrFail($id);
         $student->delete();
-        return redirect('/students')->with('completed', 'Student has been deleted');
+        //return redirect('/students')->with('completed', 'Student has been deleted');
         return response()->json(['status' => 201,]);
     }
-
-
 }
