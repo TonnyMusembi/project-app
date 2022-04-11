@@ -86,7 +86,6 @@
                     console.log(error)
                 })
         })
-
         const url = "http://project.test/api/payments"
         fetch(url)
             .then((response) => {
@@ -94,8 +93,9 @@
             })
             .catch((error) => {
                 console.log(error)
-
             })
+        const array = [1, 2, 3, 45, ];
+        console.log(array);
     </script>
 </body>
 
