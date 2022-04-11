@@ -53,8 +53,7 @@ class StudentController extends Controller
         ]);
         $student = Student::create($storeData);
         return redirect('/students')->with('completed', 'Student has been saved!');
-        //return response()->json(['status' => 201,   'message' => 'Student Created Successfully.']);
-
+  
     }
 
     /**
