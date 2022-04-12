@@ -17,10 +17,10 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        return Student::all();
-        //$student = Student::all();
-        //return view('index', compact('student'));
-        //return response()->json(['$data' => 'data']);
+        //return Student::all();
+        $student = Student::all();
+        return view('index', compact('student'));
+
 
     }
 

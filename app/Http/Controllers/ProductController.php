@@ -13,6 +13,7 @@ class ProductController extends Controller
     public function index(){
 
         return Product::all();
+        //return response()->json(['$data']);
     }
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
@@ -27,8 +28,9 @@ class ProductController extends Controller
         else {
 
             Product::create([
-                'transaction_id' => $request->input('transaction_id'),
-                'amount' => $request->input('amount'),
+                'product_id' => $request->input('product_id'),
+                'title' => $request->input('title'),
+                'name'=>$request->input('name')
             ]);
         }
         return response()->json(['req' => $request]);

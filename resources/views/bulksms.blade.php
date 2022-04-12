@@ -1,5 +1,4 @@
 <html>
-
 <body class="">
     <div>
         <form action='' method='post'>
@@ -28,7 +27,6 @@
         <div class="row mt-5">
          <div class="col-sm-8 mx-auto">
              <div class="card-body">
-
              </div>
         </div>
         </div>

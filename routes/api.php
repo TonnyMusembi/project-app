@@ -17,6 +17,7 @@ use App\Http\Controllers\ArticleController;
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\API\CommentController;
+use App\Http\Controllers\EntryController;
 use App\Http\Controllers\payements\mpesa\MpesaController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
@@ -71,7 +72,7 @@ Route::resource('api/users', UsersController::class);
 Route::resource('api/premier', PremierController::class);
 
 Route::resource('api/posts', PostController::class);
-
+Route::resource('api/entries',EntryController::class);
 
 
 

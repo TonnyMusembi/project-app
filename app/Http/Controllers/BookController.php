@@ -4,35 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use Illuminate\Support\Facades\Validator;
+
 class BookController extends Controller
 {
     public function index(Request $request)
     {
-       $books = Book::all();
-        return response()->json('$data');
+        //$books = Book::all();
+        //return response()->json('$data');
+        return Book::all();
     }
 
     public function store(Request $request)
     {
-        $book = new Book;
-        $book->name = $request->name;
-        $book->author = $request->author;
-        $book->publish_date = $request->publish_date;
-        $book->save();
-        return response()->json([
-            "message" => "Book Added."
-        ], 201);
-    }
+        $validator = Validator::make($request->all(), [
+            'book_id' => 'required',
+            'title' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status' => 422, 'errors' => $validator->errors()]);
+        } else {
 
+            Book::create([
+                'book_id' => $request->input('book_id'),
+                'title' => $request->input('title'),
+            ]);
+        }
+        return response()->json(['req' => $request]);;
+    }
     public function show($id)
     {
         $book = Book::find($id);
-        if(!empty($book))
-        {
+        if (!empty($book)) {
             return response()->json($book);
-        }
-        else
-        {
+        } else {
             return response()->json([
                 "message" => "Book not found"
             ], 404);
@@ -50,7 +55,7 @@ class BookController extends Controller
             return response()->json([
                 "message" => "Book Updated."
             ], 404);
-        }else{
+        } else {
             return response()->json([
                 "message" => "Book Not Found."
             ], 404);
@@ -59,16 +64,16 @@ class BookController extends Controller
 
     public function destroy($id)
     {
-        if(Book::where('id', $id)->exists()) {
+        if (Book::where('id', $id)->exists()) {
             $book = Book::find($id);
             $book->delete();
 
             return response()->json([
-              "message" => "records deleted."
+                "message" => "records deleted."
             ], 202);
         } else {
             return response()->json([
-              "message" => "book not found."
+                "message" => "book not found."
             ], 404);
         }
     }

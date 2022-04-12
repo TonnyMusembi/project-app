@@ -23,7 +23,6 @@ class PaymentController extends Controller
         $validator = Validator::make($request->all(), [
             'transaction_id' => 'required',
             'amount' => 'required',
-
         ]);
         if ($validator->fails()) {
             return response()->json(['status' => 422, 'errors' => $validator->errors()]);
