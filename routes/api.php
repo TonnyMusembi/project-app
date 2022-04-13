@@ -23,6 +23,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 // use App\Http\Controllers\MpesaController;
 
+use App\Http\Controllers\SubscriberController;
 
 use Stripe\ApiResource;
 
@@ -65,7 +66,7 @@ Route::resource('api/books', BookController::class);
 
 Route::resource('api/students', StudentController::class);
 Route::resource('api/games', GamesController::class);
-Route::resource('contacts', ContactController::class);
+//Route::resource('contacts', ContactController::class);
 Route::resource('api/arsenal', ArsenalController::class);
 Route::resource('api/users', UsersController::class);
 
@@ -80,7 +81,7 @@ Route::resource('api/entries',EntryController::class);
 
 //Route::post('api/register', 'Auth\RegisterController@register');
 
-//Route::resource('contacts', 'App\Http\Controllers\ContactController');
+Route::resource('contacts', 'App\Http\Controllers\ContactController');
 //Route::post('register', [PassportAuthController::class, 'register']);
 //πRoute::post('login', [PassportAuthController::class, 'login']);
 
@@ -95,3 +96,5 @@ Route::resource('api/products',ProductController::class);
 //mpesa token
 //Route::post('v1/access/token', 'MpesaController@generateAccessToken');
 //Route::post('v1/hlab/stk/push', 'MpesaController@customerMpesaSTKPush');
+
+Route::post('api/subscribe', [SubscriberController::class, 'subscribe']);

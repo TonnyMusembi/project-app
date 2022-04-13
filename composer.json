@@ -7,6 +7,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "africastalking/africastalking": "^3.0",
+        "aws/aws-sdk-php": "^3.219",
         "cloudcreativity/laravel-json-api": "^4.0",
         "djunehor/laravel-sms": "^2.2",
         "doctrine/dbal": "^3.3",
@@ -20,6 +21,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "safaricom/mpesa": "^1.0",
+        "symfony/http-client": "^5.4",
+        "symfony/mailgun-mailer": "^5.4",
         "twilio/sdk": "^6.36",
         "vonage/client": "^3.0"
     },

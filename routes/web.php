@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
 //use App\Http\Controllers\BulkSmsController;
+use App\Http\Controllers\MailController;
+
 
 
 use App\Http\Controllers\NotificationController;
@@ -44,3 +46,5 @@ Route::post('/get-token', [MpesaController::class, 'getAcessToken']);
 Route::view('/bulksms', 'bulksms');
 //Route::post('/bulksms', 'BulkSmsController@sendSms');
 Route::post('/bulksms', [BulkSmsController::class, 'sendSms']);
+
+Route::get('/send-email', [MailController::class, 'sendEmail']);

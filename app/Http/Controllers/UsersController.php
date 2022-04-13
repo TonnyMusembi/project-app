@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Users;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class UsersController extends Controller
 {
@@ -13,7 +16,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-     return ('');
+        return Users::all();
         //return response()->json (['$data'=>201]);
     }
 
@@ -35,7 +38,24 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    //
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'name' => 'required',
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status' => 422, 'errors' => $validator->errors()]);
+        } else {
+            Users::create([
+                'id' => $request->input('id'),
+                'name' => $request->input('name'),
+                'email'=>$request->input('email'),
+                'password'=>$request->input('password')
+            ]);
+        }
+        return response()->json(['req' => $request]);
     }
 
     /**
@@ -81,5 +101,6 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+        return response()->json();
     }
 }
