@@ -85,7 +85,7 @@ Route::resource('contacts', 'App\Http\Controllers\ContactController');
 //Route::post('register', [PassportAuthController::class, 'register']);
 //πRoute::post('login', [PassportAuthController::class, 'login']);
 
-Route::resource('api/photo', PhotoController::class);
+Route::resource('api/photos', PhotoController::class);
 
 Route::resource('photo', App\Http\Controllers\API\PhotoController::class);
 

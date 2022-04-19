@@ -32,7 +32,7 @@ class MpesaController extends Controller
     }
     public function makeHttp($url, $body)
     {
-        
+
         $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
