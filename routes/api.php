@@ -20,6 +20,7 @@ use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\EntryController;
 use App\Http\Controllers\payements\mpesa\MpesaController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProductController;
 // use App\Http\Controllers\MpesaController;
 
@@ -98,3 +99,4 @@ Route::resource('api/products',ProductController::class);
 //Route::post('v1/hlab/stk/push', 'MpesaController@customerMpesaSTKPush');
 
 Route::post('api/subscribe', [SubscriberController::class, 'subscribe']);
+Route::resource('api/phones', PhoneController::class);
