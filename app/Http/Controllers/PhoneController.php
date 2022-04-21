@@ -11,7 +11,7 @@ class PhoneController extends Controller
 
     public function index(){
         return Phone::all();
-//return response()->json();
+
     }
 
 
@@ -42,7 +42,7 @@ public function create(Request $request){
 
 public function destroy(Request $request){
 
-    
+
 
 
 }
