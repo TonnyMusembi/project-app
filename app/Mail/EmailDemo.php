@@ -29,6 +29,6 @@ class EmailDemo extends Mailable
     public function build()
     {
         return $this->markdown('Email.demoEmail')
-        ->with('mailData', $this->mailData);
+            ->with('mailData', '$this->mailData');
     }
 }
