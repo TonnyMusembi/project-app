@@ -76,9 +76,6 @@ Route::resource('api/posts', PostController::class);
 Route::resource('api/entries',EntryController::class);
 
 
-
-
-
 //Route::post('api/register', 'Auth\RegisterController@register');
 
 Route::resource('contacts', 'App\Http\Controllers\ContactController');
