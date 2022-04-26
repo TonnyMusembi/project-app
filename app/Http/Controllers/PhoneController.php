@@ -36,13 +36,10 @@ public function store(Request $request){
 }
 
 public function create(Request $request){
-
-   return view('');
+    //  return view('');
 }
 
 public function destroy(Request $request){
-
-
 
 
 }
