@@ -85,15 +85,6 @@
                     console.log(error)
                 })
         })
-        // const url = "http://project.test/api/payments"
-        // fetch(url)
-        //     .then((response) => {
-        //         console.log(response)
-        //     })
-        //     .catch((error) => {
-        //         console.log(error)
-        //     })
-
         const api = "http://project.test/api/phones"
         fetch(api)
             .then((response) => {
@@ -104,6 +95,7 @@
             })
         const array = [1, 2, 3, 45, ];
         console.log(array);
+
     </script>
 </body>
 
