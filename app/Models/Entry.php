@@ -10,7 +10,7 @@ class Entry extends Model
     use HasFactory;
 
     protected $fillable=[
-    'enrty_id',
-    'status'
+        'entry_id',
+        'status'
     ];
 }

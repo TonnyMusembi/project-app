@@ -38,6 +38,9 @@ class EntryController extends Controller
     public function show(Request $request){
 
     }
+    public function create(){
+        return response()->json();
+    }
     public function destroy(Request $request){
 
         return response()->json(['$data']);
