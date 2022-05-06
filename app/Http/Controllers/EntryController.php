@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class EntryController extends Controller
 {
-    //
+    
     public function index()
     {
         return Entry::all();
@@ -36,13 +36,14 @@ class EntryController extends Controller
 
     }
     public function show(Request $request){
+        return response ()->json();
 
     }
     public function create(){
-        return response()->json();
+     return response()->json();
+       //view('create');
     }
     public function destroy(Request $request){
-
         return response()->json(['$data']);
     }
 

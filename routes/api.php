@@ -22,6 +22,7 @@ use App\Http\Controllers\payements\mpesa\MpesaController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RewardsController;
 // use App\Http\Controllers\MpesaController;
 
 use App\Http\Controllers\SubscriberController;
@@ -96,3 +97,4 @@ Route::resource('api/products',ProductController::class);
 Route::post('api/subscribe', [SubscriberController::class, 'subscribe']);
 Route::resource('api/phones', PhoneController::class);
 Route::resource('api/entries',EntryController::class);
+Route::resource('api/rewards',RewardsController::class);
