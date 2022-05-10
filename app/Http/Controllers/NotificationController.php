@@ -32,5 +32,9 @@ class NotificationController extends Controller
     public  function create(){
         return response()->json([]);
     }
+    public function destroy (){
+        return response()->json([]);
+
+    }
 
 }
