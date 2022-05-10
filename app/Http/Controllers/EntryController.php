@@ -6,19 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\Entry;
 use Illuminate\Support\Facades\Validator;
 
-
 class EntryController extends Controller
 {
 
     public function index()
     {
-         return Entry::all();
-        //return response()->json();
+         //return Entry::all();
+         return response()->json ([]);
     }
 
     public function store(Request $request)
     {
-       
+
         $validator = Validator::make($request->all(), [
             'entry_id' => 'required',
             'status' => 'required',
