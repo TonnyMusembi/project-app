@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\Validator;
 
 class EntryController extends Controller
 {
-    
+
     public function index()
     {
-        return Entry::all();
-        //$entry = Entry::paginate(5);
+         return Entry::all();
+        //return response()->json();
     }
 
     public function store(Request $request)
     {
-        //return response()->json(['$data']);
+       
         $validator = Validator::make($request->all(), [
             'entry_id' => 'required',
             'status' => 'required',

@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Entry extends Model
 {
     use HasFactory;
-
-    protected $fillable=[
-        'entry_id',
-        'status'
-    ];
+   protected  $fillable =[
+       'entry_id',
+       'status'
+   ];
 }
