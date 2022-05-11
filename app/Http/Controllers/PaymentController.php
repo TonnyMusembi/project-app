@@ -36,13 +36,19 @@ class PaymentController extends Controller
         }
         return response()->json(['req' => $request]);
     }
-    public function destroy(Payment $payement){
-
-       $payement->delete();
-        //return response()->json('$data');
-    }
+    // public function destroy(Payment $payement){
+    //    $payement->delete();
+    //     //return response()->json('$data');
+    // }
     public function update(Request $request){
 
         return response()->json(['$data']);
+    }
+    public function edit(){
+        return response()->json();
+    }
+    public function destroy(){
+        
+
     }
 }
