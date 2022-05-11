@@ -38,7 +38,7 @@ class NotificationController extends Controller
     }
 
     public function show(){
-       
+       return view('');
 
     }
 
