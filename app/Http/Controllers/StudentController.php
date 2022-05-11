@@ -96,7 +96,7 @@ class StudentController extends Controller
     {
         $student = Student::findOrFail($id);
         return view('edit', compact('student'));
-        //return response() ->json([ 'status' =>201,]);
+       return response()->json(['$data']);
     }
 
     /**

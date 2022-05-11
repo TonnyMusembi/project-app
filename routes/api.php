@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Article;
-//use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GamesController;
 
@@ -64,7 +64,7 @@ Route::apiResource('api/comments', CommentController::class);
 Route::resource('api/books', BookController::class);
 
 
-//Route::resource('api/students', StudentController::class);
+Route::resource('api/students', StudentController::class);
 Route::resource('api/games', GamesController::class);
 //Route::resource('contacts', ContactController::class);
 Route::resource('api/arsenal', ArsenalController::class);
