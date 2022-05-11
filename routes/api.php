@@ -98,4 +98,3 @@ Route::post('api/subscribe', [SubscriberController::class, 'subscribe']);
 Route::resource('api/phones', PhoneController::class);
 Route::resource('api/entries',EntryController::class);
 Route::resource('api/rewards',RewardsController::class);
-
