@@ -18,6 +18,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\EntryController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\payements\mpesa\MpesaController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PhoneController;
@@ -90,11 +91,10 @@ Route::post('api/get-tokens', [MpesaController::class, 'getAcessToken']);
 Route::resource('api/payments',PaymentController::class);
 Route::resource('api/products',ProductController::class);
 
-//mpesa token
-//Route::post('v1/access/token', 'MpesaController@generateAccessToken');
-//Route::post('v1/hlab/stk/push', 'MpesaController@customerMpesaSTKPush');
 
 Route::post('api/subscribe', [SubscriberController::class, 'subscribe']);
 Route::resource('api/phones', PhoneController::class);
 Route::resource('api/entries',EntryController::class);
 Route::resource('api/rewards',RewardsController::class);
+
+Route::resource('api/events',EventController::class);
