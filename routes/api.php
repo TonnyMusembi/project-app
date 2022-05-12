@@ -23,11 +23,12 @@ use App\Http\Controllers\payements\mpesa\MpesaController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\RewardsController;
 // use App\Http\Controllers\MpesaController;
 
 use App\Http\Controllers\SubscriberController;
-
+use App\Models\Product;
 use Stripe\ApiResource;
 
 //use Database\Seeders\ArticlesTableSeeder;
@@ -98,3 +99,4 @@ Route::resource('api/entries',EntryController::class);
 Route::resource('api/rewards',RewardsController::class);
 
 Route::resource('api/events',EventController::class);
+Route::resource('api/programs',ProgramController::class);
