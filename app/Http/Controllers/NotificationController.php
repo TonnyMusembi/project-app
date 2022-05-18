@@ -36,7 +36,7 @@ class NotificationController extends Controller
         return response()->json(['$id']);
 
     }
-public function store(){
-    
+public function update(){
+
 }
 }
