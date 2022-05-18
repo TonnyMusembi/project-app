@@ -100,5 +100,4 @@
         console.log(items);
     </script>
 </body>
-
 </html>
