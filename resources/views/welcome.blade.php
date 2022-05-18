@@ -47,7 +47,7 @@
                         </form>
                         {{-- form --}}
                         <br>
-                        <button class="btn btn-primary">Stimulate Payment</button>
+                        <button class="btn btn-primary">Payment</button>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
         const array = [1, 2, 3, 45, ];
         console.log(array);
 
-        const items = [10,11,14];
+        const items = [10, 11, 14];
         console.log(items);
     </script>
 </body>
