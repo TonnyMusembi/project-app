@@ -99,9 +99,7 @@
         const items = [10, 11, 14];
         console.log(items);
 
-
         const car = {
-
             name: "Toyota",
             color: "Black",
             year: 2022,
