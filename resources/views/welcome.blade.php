@@ -98,6 +98,18 @@
 
         const items = [10, 11, 14];
         console.log(items);
+
+
+        const car = {
+
+            name: "Toyota",
+            color: "Black",
+            year: 2022,
+            engineType: "Automatic",
+
+        }
+        console.log(car)
     </script>
 </body>
+
 </html>
