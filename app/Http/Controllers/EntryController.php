@@ -11,8 +11,8 @@ class EntryController extends Controller
 
     public function index()
     {
-         //return Entry::all();
-         return response()->json ([]);
+        return Entry::all();
+        //return response()->json ([]);
     }
 
     public function store(Request $request)
@@ -31,24 +31,23 @@ class EntryController extends Controller
             ]);
         }
         return response()->json(['req' => $request]);
-
-
     }
-    public function show(Request $request){
-        return response ()->json();
-
+    public function show(Request $request)
+    {
+        return response()->json();
     }
-    public function create(){
-     return response()->json();
-       //view('create');
+    public function create()
+    {
+        return response()->json();
+        //view('create');
     }
-    public function destroy(Request $request){
+    public function destroy(Request $request)
+    {
         return response()->json(['$data']);
     }
 
-   public function  delete(){
-       return response()->json([]);
-
-
-   }
+    public function  delete()
+    {
+        return response()->json([]);
+    }
 }
