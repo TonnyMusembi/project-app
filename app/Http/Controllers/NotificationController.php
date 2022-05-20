@@ -34,7 +34,6 @@ class NotificationController extends Controller
     }
     public function destroy (){
         return response()->json(['$id']);
-
     }
 public function update(){
 
