@@ -50,6 +50,5 @@ class EntryController extends Controller
         return response()->json([]);
     }
 
-    
 
 }
