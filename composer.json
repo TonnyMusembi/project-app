@@ -21,6 +21,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "safaricom/mpesa": "^1.0",
+        "srmklive/paypal": "^3.0",
         "symfony/http-client": "^5.4",
         "symfony/mailgun-mailer": "^5.4",
         "twilio/sdk": "^6.36",

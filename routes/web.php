@@ -6,6 +6,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
 //use App\Http\Controllers\BulkSmsController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\PayPalController;
 
 
 
@@ -61,3 +62,6 @@ Route::get('/send-email', [MailController::class, 'sendEmail']);
 
 //     dd("Email is Sent.");
 // });
+Route::get('payment', [PayPalController::class,'payment']);
+Route::get('cancel', [PayPalController::class,'cancel']);
+Route::get('payment/success', [PayPalController::class,'success']);
