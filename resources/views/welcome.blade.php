@@ -108,9 +108,9 @@
         }
         console.log(car)
 
-        const project={
-            name:"new",
-            price:"login"
+        const project = {
+            name: "new",
+            price: "login"
         }
         console.log(project)
     </script>
