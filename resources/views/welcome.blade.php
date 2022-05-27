@@ -113,6 +113,15 @@
             price: "login"
         }
         console.log(project)
+
+
+        const a = {}
+        console.table({
+            'id': 001,
+            'name': 'Tony'
+        });
+
+        console.warn('this is a warning!')
     </script>
 </body>
 
