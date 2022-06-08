@@ -48,7 +48,7 @@ class PaymentController extends Controller
         return response()->json();
     }
     public function destroy(){
-        
+
 
     }
 }
