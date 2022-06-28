@@ -14,7 +14,7 @@ class PaymentController extends Controller
     public function  index()
     {
         return Payment::all();
-     //return response()->json(['$data']);
+        //return response()->json(['$data']);
 
     }
 
@@ -26,8 +26,7 @@ class PaymentController extends Controller
         ]);
         if ($validator->fails()) {
             return response()->json(['status' => 422, 'errors' => $validator->errors()]);
-        }
-        else {
+        } else {
 
             Payment::create([
                 'transaction_id' => $request->input('transaction_id'),
@@ -40,15 +39,16 @@ class PaymentController extends Controller
     //    $payement->delete();
     //     //return response()->json('$data');
     // }
-    public function update(Request $request){
+    public function update(Request $request)
+    {
 
         return response()->json(['$data']);
     }
-    public function edit(){
+    public function edit()
+    {
         return response()->json();
     }
-    public function destroy(){
-
-
+    public function destroy()
+    {
     }
 }
