@@ -11,8 +11,7 @@ use Prophecy\Doubler\Generator\Node\ReturnTypeNode;
 class PaymentController extends Controller
 {
     //
-    public function  index()
-    {
+    public function  index(){
         return Payment::all();
         //return response()->json(['$data']);
 
