@@ -21,7 +21,6 @@ class StudentController extends Controller
         $student = Student::all();
         return view('index', compact('student'));
 
-
     }
 
     /**
