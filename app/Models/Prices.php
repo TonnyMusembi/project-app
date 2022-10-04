@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prices extends Model
 {
+    protected $fillable = [
+        'status_id',
+        'name'
+    ];
     use HasFactory;
 }
