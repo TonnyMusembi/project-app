@@ -33,6 +33,11 @@ class EventController extends Controller
     public function show(){
 
     }
-
+public function destroy (){
+    return response()->json([
+        'messege' => 'Record deleted successfully',
+        'status' => '200'
+    ]);
+}
 
 }
