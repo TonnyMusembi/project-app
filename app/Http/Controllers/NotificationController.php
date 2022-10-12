@@ -33,7 +33,10 @@ class NotificationController extends Controller
         return response()->json([]);
     }
     public function destroy (){
-        return response()->json(['$id']);
+        return response()->json([
+            'message' => 'deleted sucessfully',
+            'status' =>'200'
+        ]);
     }
 public function update(){
 
